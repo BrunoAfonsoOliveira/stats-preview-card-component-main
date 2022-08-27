@@ -30,7 +30,7 @@ body {
 }
 
 .card-container {
-    max-width: 95vw;
+    max-width: 90vw;
     display: flex;
     background-color: var(--card-background);
     border-radius: 10px;
@@ -39,12 +39,12 @@ body {
 .card-content {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0 3rem 4rem;
+    padding: 4rem;
 }
 
 .card-title {
-    font-size: 2rem;
-    max-width: 25rem;
+    font-size: 2.2rem;
+    max-width: 30rem;
     width: 90%;
 }
 
@@ -57,13 +57,20 @@ body {
     max-width: 22rem;
     width: 90%;
     line-height: 1.5rem;
+    color: var(--stat-headings);
 }
 
 .stats-container {
+    font-size: .8rem;
     display: flex;
     line-height: 1.5rem;
     gap: 2rem;
     margin-top: 5rem;
+}
+
+.stats-companies, .stats-templates, .stats-queries {
+    max-width: 6rem;
+    color: var(--stat-headings);
 }
 
 .special {
@@ -72,14 +79,15 @@ body {
     color: white;
 }
 
-.stats-companies, .stats-templates, .stats-queries {
-    max-width: 6rem;
-    color: var(--stat-headings);
-}
-
 .card-image {
     width: 30rem;
     background: white url(images/image-header-desktop.jpg) center center/cover no-repeat;
+    border-radius: 0 10px 10px 0;
+}
+
+.card-image-purple {
+    height: 100%;
+    background-color: var(--image-color);
     border-radius: 0 10px 10px 0;
 }
 
@@ -90,7 +98,7 @@ body {
     color: hsl(228, 45%, 44%); 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     body {
         font-size: .9em;
@@ -101,7 +109,7 @@ body {
     }
 
     .card-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .special {
@@ -111,6 +119,41 @@ body {
     .stats-container {
         gap: 1.5rem;
         padding-right: 1rem;
+    }
+
+}
+
+@media (max-width: 730px) {
+    .card-container {
+        flex-direction: column-reverse;
+        max-width: 30rem;
+        width: 90vw;
+    }
+
+    .card-image {
+        background-image: url(images/image-header-mobile.jpg);
+        height: 20rem;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+    }
+
+    .card-image-purple {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card-content {
+        align-items: center;
+        padding: 3rem 1rem 2rem 1rem;
+    }
+    
+    .card-title, .card-description, .stats-container {
+        text-align: center;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        padding-right: 0;
+        margin-top: 2rem;
     }
 
 }
