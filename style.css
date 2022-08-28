@@ -43,9 +43,7 @@ body {
 }
 
 .card-title {
-    font-size: 2.2rem;
-    max-width: 30rem;
-    width: 90%;
+    font-size: 2.1rem;
 }
 
 .emphasis {
@@ -54,7 +52,6 @@ body {
 
 .card-description {
     margin-top: 1.5rem;
-    max-width: 22rem;
     width: 90%;
     line-height: 1.5rem;
     color: var(--stat-headings);
@@ -63,14 +60,15 @@ body {
 .stats-container {
     font-size: .8rem;
     display: flex;
-    line-height: 1.5rem;
-    gap: 2rem;
     margin-top: 5rem;
 }
 
-.stats-companies, .stats-templates, .stats-queries {
-    max-width: 6rem;
+.stats-container > * {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 28%;
     color: var(--stat-headings);
+    gap: .3rem
 }
 
 .special {
@@ -80,15 +78,26 @@ body {
 }
 
 .card-image {
-    width: 30rem;
-    background: white url(images/image-header-desktop.jpg) center center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-image img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
     border-radius: 0 10px 10px 0;
+    position: absolute;
 }
 
 .card-image-purple {
-    height: 100%;
     background-color: var(--image-color);
-    border-radius: 0 10px 10px 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
 }
 
 .attribution { 
@@ -99,43 +108,19 @@ body {
     color: hsl(228, 45%, 44%); 
 }
 
-@media (max-width: 1050px) {
-
-    body {
-        font-size: .9em;
-    }
-
-    .card-content {
-        padding: 2rem 0 3rem 2rem;
-    }
-
-    .card-title {
-        font-size: 1.7rem;
-    }
-
-    .special {
-        font-size: 1.2rem;
-    }
-
-    .stats-container {
-        gap: 1.5rem;
-        padding-right: 1rem;
-    }
-
-}
-
-@media (max-width: 730px) {
+@media (max-width: 880px) {
     .card-container {
         flex-direction: column-reverse;
         max-width: 30rem;
         width: 90vw;
     }
 
-    .card-image {
-        background-image: url(images/image-header-mobile.jpg);
+    .card-image img {
+        max-width: 100%;
         height: 20rem;
         border-radius: 10px 10px 0 0;
         width: 100%;
+        position: relative;
     }
 
     .card-image-purple {
@@ -144,17 +129,21 @@ body {
 
     .card-content {
         align-items: center;
-        padding: 3rem 1rem 2rem 1rem;
+        padding: 3rem 2rem;
     }
     
-    .card-title, .card-description, .stats-container {
+    .card-content > * {
         text-align: center;
+        gap: 1.5rem;
+    }
+
+    .card-description {
+        width: 100%;
     }
 
     .stats-container {
         flex-direction: column;
-        padding-right: 0;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 
 }
